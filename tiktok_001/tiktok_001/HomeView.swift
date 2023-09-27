@@ -30,6 +30,26 @@ struct HomeView: View {
                                 .foregroundColor(.white)
                         }
                         
+                        VStack {
+                            Text("ここに挿入")
+                            
+                            Circle()
+                                .frame(width: .infinity)
+                            
+                            Rectangle()
+                                .frame(width: 200, height: 200)
+                            
+                                .onTapGesture {
+                                    // ここでタップ処理をする
+                                    
+                                }
+                            
+                            HStack {
+                                Text("ここ")
+                                Text("あ＾＾＾＾")
+                            }
+                        }
+                        
                         Spacer()
                     }
                     
@@ -43,6 +63,17 @@ struct HomeView: View {
                         
                         Text(data.message)
                             .padding(8)
+                        
+                        Text(data.message)
+                            .font(.callout)
+                        
+                        Text("ここで挿入")
+                        
+                        // ここにメモをする
+                        
+                        VStack {
+                            Text("メモ")
+                        }
                     }
                 }
             }
@@ -50,10 +81,16 @@ struct HomeView: View {
             .navigationBarTitle("おすすめ")
             .navigationSplitViewStyle(.balanced)
             .onAppear {
-                dateFormatter.calendar = Calendar(identifier: .gregorian)
-                dateFormatter.locale = Locale(identifier: "ja_JP")
-                dateFormatter.timeZone = TimeZone(identifier: "Asia/Tokyo")
-                dateFormatter.dateFormat = "yyyy年M月d日"
+                // 画面がレンダリングされた際に実効される
+                /// メソッドを描きたくないけどここに書いてもいい
+                func makeRandomMessage() {
+                    var text = ""
+                    var number = 0
+                    
+                    // データを取得
+                    /// でもデータを取得
+                    /// ここで木データとAPIを切り替える
+                }
             }
         }
     }
